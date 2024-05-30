@@ -16,7 +16,7 @@ export class Moment extends Core {
   }
 
   currentDate() {
-    return this.date.toLocaleDateString()
+    return this.date.getDate()
   }
 
   currentDay() {

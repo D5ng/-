@@ -1,0 +1,9 @@
+@import "styles/color.module.scss";
+@import "styles/layout.module.scss";
+
+.todo-list {
+  padding: 24px;
+  gap: 24px 0;
+  @include Column;
+  color: $gray-20;
+}
