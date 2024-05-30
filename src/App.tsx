@@ -3,9 +3,11 @@ import TodoHeader from "components/todo/header/todo-header"
 
 export default function App() {
   return (
-    <div>
-      <TodoHeader />
-    </div>
+    <main className={classes.main}>
+      <section className={classes.todo}>
+        <TodoHeader />
+      </section>
+    </main>
   )
 }
 
