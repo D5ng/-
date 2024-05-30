@@ -1,13 +1,13 @@
-import { PropsWithChildren } from "react"
+import { ChangeEvent, PropsWithChildren } from "react"
 
 export interface ModalContextProps {
-  title: string
   inputValue: string
   onCloseModal: () => void
-  onChange: () => void
-  onBlur: () => void
+  onInputValueChange: (event: ChangeEvent<HTMLInputElement>) => void
+  onInputBlur: () => void
+  onInputReset?: () => void
 }
 
 export interface ModalContextValue extends PropsWithChildren {
-  value: ModalContextValue
+  value: ModalContextProps
 }

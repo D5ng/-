@@ -12,13 +12,34 @@ ul {
   list-style: none;
 }
 
-html,
-body {
+html {
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
   cursor: pointer;
   background: none;
   border: none;
+}
+
+body {
+  width: 100%;
+  background-color: #f0f0e8;
+}
+
+#root {
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+#modal-root {
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+  height: 555px;
 }

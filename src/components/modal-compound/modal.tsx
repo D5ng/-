@@ -1,6 +1,7 @@
-import { createContext, InputHTMLAttributes, useContext } from "react"
+import { createContext, InputHTMLAttributes, PropsWithChildren, useContext } from "react"
 import { ModalContextProps, ModalContextValue } from "./modal.type"
 import { initialModalContext } from "./modal.constant"
+import Portal from "components/portal/portal"
 import classes from "./modal.module.scss"
 
 export const ModalContext = createContext<ModalContextProps>(initialModalContext)
@@ -24,9 +25,8 @@ function Backdrop() {
   return <div className={classes.backdrop} onClick={modalContext.onCloseModal}></div>
 }
 
-function Title() {
-  const modalContext = useModalContext()
-  return <h2>{modalContext.title}</h2>
+function Title(props: PropsWithChildren) {
+  return <h2 className={classes.title}>{props.children}</h2>
 }
 
 function Input(props: InputHTMLAttributes<HTMLInputElement>) {
@@ -34,12 +34,17 @@ function Input(props: InputHTMLAttributes<HTMLInputElement>) {
   return (
     <input
       type={props.type}
-      onChange={modalContext.onChange}
-      onBlur={modalContext.onBlur}
+      onChange={modalContext.onInputValueChange}
+      onBlur={modalContext.onInputBlur}
       value={modalContext.inputValue}
       placeholder={props.placeholder}
+      className={classes.input}
     />
   )
+}
+
+function Container(props: PropsWithChildren) {
+  return <div className={classes.container}>{props.children}</div>
 }
 
 // function Button(){
@@ -52,3 +57,4 @@ function Input(props: InputHTMLAttributes<HTMLInputElement>) {
 Modal.Backdrop = Backdrop
 Modal.Title = Title
 Modal.Input = Input
+Modal.Container = Container

@@ -6,10 +6,9 @@ export default function useInput(inputValidation: InputValidation) {
   const [inputValue, setInputValue] = useState("")
   const [isTouched, setIsTouched] = useState(false)
 
-  const handleInputValueChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (event) =>
-    setInputValue(event.target.value)
-  const handleInputBlur: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = () => setIsTouched(true)
-  const handleInputReset = () => {
+  const onInputValueChange: ChangeEventHandler<HTMLInputElement> = (event) => setInputValue(event.target.value)
+  const onInputBlur = () => setIsTouched(true)
+  const onInputReset = () => {
     setInputValue("")
     setIsTouched(false)
   }
@@ -21,8 +20,8 @@ export default function useInput(inputValidation: InputValidation) {
     isValid,
     hasError,
     inputValue,
-    handleInputValueChange,
-    handleInputBlur,
-    handleInputReset,
+    onInputValueChange,
+    onInputBlur,
+    onInputReset,
   }
 }
