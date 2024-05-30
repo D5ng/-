@@ -6,4 +6,6 @@
   gap: 24px 0;
   @include Column;
   color: $gray-20;
+  min-height: 50vh;
+  overflow-y: scroll;
 }

@@ -1,4 +1,3 @@
-import React from "react"
 import { todoItems } from "components/todo/list/todo-list.constant"
 import TodoListItem from "components/todo/list/todo-list-item"
 import classes from "./todo-list.module.scss"
