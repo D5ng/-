@@ -1,0 +1,39 @@
+@import "styles/color.module.scss";
+@import "styles/layout.module.scss";
+
+.todo-header {
+  padding: 24px;
+  border-bottom: 1px solid $border;
+}
+
+.todo-inner-header {
+  position: relative;
+  @include Column;
+  gap: 7px 0;
+}
+
+.todo-header__date {
+  font-size: 24px;
+  font-weight: 500;
+  color: $main;
+
+  span {
+    font-weight: 300;
+  }
+
+  sup {
+    font-size: 12px;
+  }
+}
+
+.todo-header__month {
+  color: $gray;
+}
+
+.todo-header-task-count {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: $gray;
+  font-size: 14px;
+}
